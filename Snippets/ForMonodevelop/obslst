@@ -5,13 +5,13 @@ public virtual IList<$type$> $listProperty$ {
     set => SetField(ref $listField$, value, () => $listProperty$);
 }
 
-GenericObservableList<$type$> $obsListField$;
+GenericObservableList<$type$> observable$listField$;
 //FIXME Кослыль пока не разберемся как научить hibernate работать с обновляемыми списками.
-public virtual GenericObservableList<$type$> $obsListProperty$ {
+public virtual GenericObservableList<$type$> Observable$listField$ {
     get {
-        if($obsListField$ == null)
-            $obsListField$ = new GenericObservableList<$type$>($listProperty$);
-        return $obsListField$;
+        if(observable$listField$ == null)
+            observable$listField$ = new GenericObservableList<$type$>($listProperty$);
+        return observable$listField$;
     }
 }
 $end$
