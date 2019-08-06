@@ -1,0 +1,13 @@
+#region $command$Command
+
+        public DelegateCommand $command$Command { get; private set; }
+
+        private void Create$command$Command()
+        {
+            $command$Command = new DelegateCommand(
+                () => { },
+                () => true
+            );
+        }
+
+#endregion $command$Command

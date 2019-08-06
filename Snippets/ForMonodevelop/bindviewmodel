@@ -1,0 +1,2 @@
+$widget$.Binding.AddBinding(ViewModel, vm => vm.$property$, w => w.$widgetProperty$).InitializeFromSource();
+$end$

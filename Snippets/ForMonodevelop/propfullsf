@@ -1,0 +1,7 @@
+private $type$ $field$;
+[Display(Name = "$name$")]
+public virtual $type$ $property${
+    get => $field$;
+    set => SetField(ref $field$, value, () => $property$);
+}
+$end$

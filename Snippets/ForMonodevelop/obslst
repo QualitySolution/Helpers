@@ -1,0 +1,17 @@
+IList<$type$> $listField$ = new List<$type$>();
+[Display(Name = "$displayName$")]
+public virtual IList<$type$> $listProperty$ {
+    get => $listField$;
+    set => SetField(ref $listField$, value, () => $listProperty$);
+}
+
+GenericObservableList<$type$> $obsListField$;
+//FIXME Кослыль пока не разберемся как научить hibernate работать с обновляемыми списками.
+public virtual GenericObservableList<$type$> $obsListProperty$ {
+    get {
+        if($obsListField$ == null)
+            $obsListField$ = new GenericObservableList<$type$>($listProperty$);
+        return $obsListField$;
+    }
+}
+$end$
