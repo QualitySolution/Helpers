@@ -2,7 +2,7 @@ IList<$type$> $listField$ = new List<$type$>();
 [Display(Name = "$displayName$")]
 public virtual IList<$type$> $listProperty$ {
     get => $listField$;
-    set => SetField(ref $listField$, value, () => $listProperty$);
+    set => SetField(ref $listField$, value);
 }
 
 GenericObservableList<$type$> observable$listField$;
