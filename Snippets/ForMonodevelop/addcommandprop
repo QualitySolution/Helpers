@@ -1,0 +1,14 @@
+private DelegateCommand $fieldName$Command;
+public DelegateCommand $propertyName$Command {
+    get {
+        if($fieldName$Command == null) {
+            $fieldName$Command = new DelegateCommand(
+                () => {
+                    
+                },
+                () => true
+            );
+        }
+        return $fieldName$Command;
+    }
+}
