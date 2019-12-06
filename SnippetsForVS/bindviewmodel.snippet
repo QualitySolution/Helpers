@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>bindviewmodel</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>bindviewmodel</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>widget</ID>
+          <ToolTip>Name of widget</ToolTip>
+          <Default>widgetName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>property</ID>
+          <ToolTip>Property in view model</ToolTip>
+          <Default>propertyOfViewModel</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>widgetProperty</ID>
+          <ToolTip>Property in widget</ToolTip>
+          <Default>properyOfWidget</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[$widget$.Binding.AddBinding(ViewModel, vm => vm.$property$, w => w.$widgetProperty$).InitializeFromSource();
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

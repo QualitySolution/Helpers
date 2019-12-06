@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>obslst</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>obslst</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <ToolTip>type</ToolTip>
+          <Default>type</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>listField</ID>
+          <ToolTip>listField</ToolTip>
+          <Default>listField</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>displayName</ID>
+          <ToolTip>displayName</ToolTip>
+          <Default>displayName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>listProperty</ID>
+          <ToolTip>listProperty</ToolTip>
+          <Default>listProperty</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[IList<$type$> $listField$ = new List<$type$>();
+[Display(Name = "$displayName$")]
+public virtual IList<$type$> $listProperty$ {
+    get => $listField$;
+    set => SetField(ref $listField$, value);
+}
+
+GenericObservableList<$type$> observable$listProperty$;
+//FIXME Кослыль пока не разберемся как научить hibernate работать с обновляемыми списками.
+public virtual GenericObservableList<$type$> Observable$listProperty$ {
+    get {
+        if(observable$listProperty$ == null)
+            observable$listProperty$ = new GenericObservableList<$type$>($listProperty$);
+        return observable$listProperty$;
+    }
+}
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
