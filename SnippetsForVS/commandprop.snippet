@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>commandprop</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>commandprop</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>fieldName</ID>
+          <ToolTip>Name of field for command</ToolTip>
+          <Default>cmdFieldName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>propertyName</ID>
+          <ToolTip>Name of property for command</ToolTip>
+          <Default>cmdPropertyName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[private DelegateCommand $fieldName$Command;
+public DelegateCommand $propertyName$Command {
+    get {
+        if($fieldName$Command == null) {
+            $fieldName$Command = new DelegateCommand($propertyName$);
+        }
+        return $fieldName$Command;
+    }
+}
+
+private void $propertyName$()
+{
+
+}
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

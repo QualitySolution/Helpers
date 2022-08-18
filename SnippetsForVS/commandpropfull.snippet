@@ -5,20 +5,20 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>addcommandprop</Title>
+      <Title>commandpropfull</Title>
       <Author>
       </Author>
       <Description>
       </Description>
       <HelpUrl>
       </HelpUrl>
-      <Shortcut>addcommandprop</Shortcut>
+      <Shortcut>commandpropfull</Shortcut>
     </Header>
     <Snippet>
       <Declarations>
         <Literal Editable="true">
           <ID>fieldName</ID>
-          <ToolTip>Name of feild for command</ToolTip>
+          <ToolTip>Name of field for command</ToolTip>
           <Default>cmdFieldName</Default>
           <Function>
           </Function>
@@ -35,15 +35,18 @@
 public DelegateCommand $propertyName$Command {
     get {
         if($fieldName$Command == null) {
-            $fieldName$Command = new DelegateCommand(
-                () => {
-                    
-                },
-                () => true
-            );
+            $fieldName$Command = new DelegateCommand($propertyName$, () => Can$propertyName$);
+            $fieldName$Command.CanExecuteChangedWith(this, x => x.Can$propertyName$);
         }
         return $fieldName$Command;
     }
+}
+
+public bool Can$propertyName$ => true;
+
+private void $propertyName$()
+{
+
 }
 $end$]]></Code>
     </Snippet>
