@@ -45,11 +45,11 @@
           </Function>
         </Literal>
       </Declarations>
-      <Code Language="csharp" Delimiter="$"><![CDATA[private $type$ $field$;
+      <Code Language="csharp" Delimiter="$"><![CDATA[private $type$ _$field$;
 [Display(Name = "$name$")]
 public virtual $type$ $property${
-    get => $field$;
-    set => SetField(ref $field$, value);
+    get => _$field$;
+    set => SetField(ref _$field$, value);
 }
 $end$]]></Code>
     </Snippet>
